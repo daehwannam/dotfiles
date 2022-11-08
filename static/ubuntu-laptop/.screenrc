@@ -1,0 +1,4 @@
+
+# Ctrl-\ as prefix instread of Ctrl-a
+# https://superuser.com/a/422128
+escape ^|\  # Ctrl-\

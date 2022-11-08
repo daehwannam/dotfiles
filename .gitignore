@@ -1,0 +1,10 @@
+
+# special file names (including directories)
+_tmp_*
+
+# emacs temporary files
+*~
+\#*#
+
+# python temporary file
+*.pyc
