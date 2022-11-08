@@ -1,0 +1,6 @@
+
+* Setup
+
+#+begin_src sh
+git clone https://github.com/daehwannam/dotfiles.git ~/.dotfiles
+#+end_src
