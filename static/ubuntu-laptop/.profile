@@ -28,6 +28,10 @@ fi
 
 # My configuration starts from here
 
+# conda path config
+CONDA=miniconda3  # anaconda3 or miniconda3 or ...
+export PATH="/home/dhnam/program/$CONDA/envs/default/bin:$PATH"
+
 # app commands
 export PATH="/home/dhnam/script/common/command:$PATH"
 export PATH="/home/dhnam/script/laptop/command:$PATH"
