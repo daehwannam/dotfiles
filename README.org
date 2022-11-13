@@ -4,3 +4,12 @@
 #+begin_src sh
 git clone https://github.com/daehwannam/dotfiles.git ~/.dotfiles
 #+end_src
+
+* Requirement
+** GNU Stow
+
+Install stow by one of the following commands:
+#+begin_src
+sudo apt install stow
+conda install -c conda-forge stow
+#+end_src

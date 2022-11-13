@@ -1,0 +1,78 @@
+-----------------------------------------------------------------------------
+            Welcome to the GPU Cluster  at Computer Science and Engineering
+                https://cse.postech.ac.kr/
+------------------------------------------------------------------------------
+              ** Unauthorized use/access is prohibited. **
+______________________________________________________________________________
+
+Welcome, *please* read these important system notes:
+
+--> This GPU cluster is currently running the SLURM resource manager to
+    schedule all compute resources. Example SLURM job scripts are
+    available on the system at /opt/ohpc/pub/apps/SLURM-Batch-Traing
+
+---->> Our  queue
+          gpu queue : 2080ti, titanrtx
+
+
+           2080ti        queue :  2080ti:8            n[1-4]
+           titanrtx      queue :  TitanRTX:4          n[5-9]
+
+--->> To run an interactive shell, issue:
+
+        ex1. 1 node, 30 minute work time, 1 gpu
+
+           1) srun -p titanrtx  -N 1 -n 2  -t 00:30:00 --gres=gpu:1 --pty /bin/bash -l   => 자원을 활당하기
+                or
+              srun --gres=gpu:1 --pty bash -i
+              exit  => queue 에서 나오기
+
+        ex2.  If you use 4 gpu, it is 2 gpu per node
+
+           1) srun -p titanrtx -N 1 -n 4  -t 00:30:00 --gres=gpu:2 --pty /bin/bash -l   => 자원을 활당하기
+                or
+              srun --gres=gpu:2 --pty bash -i
+
+              exit  => queue 에서 나오기
+
+        ex3. If you use 4 gpu, it is 4 gpu per node
+
+           1) srun -p titanrtx  -N 1 -n 8  -t 00:30:00 --gres=gpu:4 --pty /bin/bash -l   => 자원을 활당하기
+               or
+              srun --gres=gpu:4 --pty bash -i
+
+              exit  => queue 에서 나오기
+
+        ex5. If you use cpu queue , gpu queue
+
+            1) salloc -N 1 -c 6  -t 00:30:00  /bin/bash -l  => 자원을 활당하기
+               srun execution.sh  => 작업실행
+               exit   => queue 에서 나오기
+
+            4) salloc -p titanrtx -N 1 -n 4  -t 00:30:00  /bin/bash -l  ; srun execution.sh ; exit
+            5) salloc -p 2080ti   -N 1 -n 2  -t 00:30:00  /bin/bash -l  ; srun execution.sh ; exit
+
+
+--->> To submit a batch job, issue:       sbatch job_script
+      To show all queued jobs, issue:     squeue
+      To show all queued jobs, issue:     scontrol show job "your job_id"
+      To show all nodes stats, issue:     sinfo
+      To show all nodes stats, issue:     scontrol show node "node_name"
+      To kill a queued job, issue:        scancel <jobId>
+
+    See "man slurm" for more detailed information.
+
+--> This cluster has 2 main queues with the following timelimits:
+    * gpu queue   (11 days)
+
+--> To see which software packages are available issue: "module avail"
+
+    Use the following commands to adjust your environment:
+    'module --help '          - This help message
+    'module list '            - To show  module losd  stats
+    'module add <module>'     - adds a module to your environment for this session
+    'module del | unload      - module [...]  Remove module(s), do not complain if not found
+    'module swap  m1 m2       - unload m1 and load m2
+    'module purge             - unload all modules
+    'ml ;  ml av ; ml show module ;
+______________________________________________________________________________
