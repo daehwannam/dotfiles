@@ -32,3 +32,5 @@ conda config --set auto_activate_base false  # it creates "~/.condarc"
 CONDA=miniconda3  # anaconda3 or miniconda3 or ...
 export PATH="/home/dhnam/program/$CONDA/envs/default/bin:$PATH"
 conda activate default
+
+alias emacs='emacs -nw'
