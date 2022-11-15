@@ -33,3 +33,5 @@ conda config --set auto_activate_base false  # it creates "~/.condarc"
 
 # activate 'default' environment
 conda activate default
+
+# alias emacs='emacs -nw'
