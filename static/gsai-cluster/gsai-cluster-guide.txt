@@ -1,0 +1,92 @@
+-----------------------------------------------------------------------------
+  Welcome to the GPU Cluster  at Graduate School of Artificial Intelligence
+                        https://ai.postech.ac.kr/
+------------------------------------------------------------------------------
+              ** Unauthorized use/access is prohibited. **
+______________________________________________________________________________
+
+Welcome, *please* read these important system notes:
+
+--->> This GPU cluster is currently running the SLURM resource manager to
+    schedule all compute resources. Example SLURM job scripts are
+    available on the system at /opt/ohpc/pub/apps/SLURM-Batch-Traing
+
+--->> Specifications of our Cluster
+PARTITION        CPUS(A/I/O/T)   STATE  NODELIST        NODES GRES            MEMORY
+cpu-max20        20/140/0/160    mix    n[1-4]          4     gpu:GTX2080Ti:8 250000
+cpu-max20        0/80/0/80       idle   n[5-6]          2     gpu:GTX2080Ti:8 250000
+cpu-max48        0/96/0/96       idle   n7              1     gpu:TITANRTX:4  250000
+cpu-max64-1      18/238/0/256    mix    n8              1     gpu:A100:8      1000000
+cpu-max64-2      2/254/0/256     mix    n9              1     gpu:A100:8      1000000
+cpu-max64-3      6/122/0/128     mix    n11             1     gpu:A100-pci:4  500000
+cpu-max64-3      0/128/0/128     idle   n10             1     gpu:A100-pci:4  500000
+2080ti*          50/190/0/240    mix    n[1-6]          6     gpu:GTX2080Ti:8 250000
+TITANRTX         0/96/0/96       idle   n7              1     gpu:TITANRTX:4  250000
+A100             20/236/0/256    mix    n8              1     gpu:A100:8      1000000
+4A100            4/252/0/256     mix    n9              1     gpu:A100:8      1000000
+A100-pci         6/250/0/256     mix    n[10-11]        2     gpu:A100-pci:4  500000
+
+--->> To run an interactive shell, issue: exit  => queue 에서 나오기
+
+        ex1. 1 node, 30 minute work time, 1 gpu
+
+           1) srun -p 2080ti  -N 1 -n 2  -t 00:30:00 --gres=gpu:1 --pty /bin/bash -l   => 자원을 활당하기
+                or
+              srun --gres=gpu:1 --pty bash -i
+            ===========================================
+        ex2.  If you use 4 gpu, it is 2 gpu per node
+
+           1) srun -p TITANRTX -N 1 -n 8  -t 00:30:00 --gres=gpu:2 --pty /bin/bash -l   => 자원을 활당하기
+                or
+              srun --gres=gpu:2 --pty bash -i
+            ===========================================
+        ex3. If you use 4 gpu, it is 4 gpu per node
+
+           1) srun -p TITANRTX  -N 1 -n 8  -t 00:30:00 --gres=gpu:4 --pty /bin/bash -l   => 자원을 활당하기
+               or
+              srun --gres=gpu:4 --pty bash -i
+            ===========================================
+        ex4. interactive-session for srun
+
+             Usage: interactive_session --help
+             Usage: interactive_session [-c] [-m] [-g] [-f] [-p] [-J] [-r] [-s] [-t] [-w]
+
+             example) $interactive_session  -c 8 -g gpu:2 -p A100-pci -t 10:00:00 -w n10
+             ===========================================
+        ex5. salloc
+            1) salloc -p cpu-all -N 1 -n 6  -t 00:30:00  /bin/bash -l  => 자원을 활당하기
+               srun execution.sh  => 작업실행
+            2) salloc -p cpu-all -N 1 -n 4  -t 00:30:00  /bin/bash -l  ; srun execution.sh ; exit
+            3) salloc -p cpu-all -N 1 -n 2  -t 00:30:00  /bin/bash -l  ; srun execution.sh ; exit
+            ===========================================
+
+        ex6. If you want to use A100 for 4GPU or 8GPU only
+            1) Use the 4A100 partition with QOS: -p 4A100 -q 4A100
+            2) Use "--gres=gpu:4" or "--gres=gpu:8" option
+            3) DO NOT USE "--gres=gpu:5 or --gres=gpu:6, --gres=gpu:7"
+
+            example) srun -p 4A100 -q 4A100 -N 1 -n 2 -t 00:30:00 --gres=gpu:4 --pty /bin/bash -l
+            ===========================================
+
+--->> To submit a batch job, issue:       sbatch job_script
+      To show all queued jobs, issue:     squeue
+      To show all queued jobs, issue:     scontrol show job "your_job_id"
+      To show all nodes stats, issue:     sinfo
+      To show all nodes stats, issue:     scontrol show node "node_name"
+      To kill a queued job, issue:        scancel <jobId>
+    See "man slurm" for more detailed information.
+
+---> This cluster has two timelimits depending on the instruction:
+    - srun & salloc (6 hours)
+    - sbatch (3 days)
+
+---> To see which software packages are available issue: "module avail"
+    Use the following commands to adjust your environment:
+    'module --help '          - This help message
+    'module list '            - To show  module losd  stats
+    'module add <module>'     - adds a module to your environment for this session
+    'module del | unload      - module [...]  Remove module(s), do not complain if not found
+    'module swap  m1 m2       - unload m1 and load m2
+    'module purge             - unload all modules
+    'ml ;  ml av ; ml show module ;
+______________________________________________________________________________

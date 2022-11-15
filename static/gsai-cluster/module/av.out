@@ -1,0 +1,42 @@
+
+------------------------------------------------------ /opt/ohpc/pub/moduledeps/gnu7-mpich -------------------------------------------------------
+   boost/1.67.0    fftw/3.3.7    mpiP/3.4.1
+
+--------------------------------------------------------- /opt/ohpc/pub/moduledeps/gnu7 ----------------------------------------------------------
+   atlas/3.10.3     clapack/3.2.1 (D)    lapack/3.9.0        mvapich2/2.2       openmpi/1.10.7
+   clapack/3.1.1    hdf5/1.10.2          mpich/3.2.1  (L)    openblas/0.2.20    openmpi3/3.1.0
+
+----------------------------------------------------------- /opt/ohpc/pub/modulefiles ------------------------------------------------------------
+   EasyBuild/3.9.2                 cuda/10.0                                gnu8/8.3.0
+   EasyBuild/3.9.4          (D)    cuda/10.1                                hwloc/2.0.3
+   autotools                (L)    cuda/10.2                         (L)    hwloc/2.1.0                 (D)
+   charliecloud/0.9.7              cuda/10.2/nvhpc-byo-compiler/21.2        nccl/cuda/10.0/2.4.8
+   charliecloud/0.11        (D)    cuda/10.2/nvhpc-nompi/21.2               nccl/cuda/10.1/2.8.3
+   cmake/3.14.3                    cuda/10.2/nvhpc/21.2                     nccl/cuda/10.2/2.8.3        (L)
+   cmake/3.15.4             (D)    cuda/11.0                                nccl/cuda/11.0/2.8.3
+   cuDNN/cuda/10.0/7.3.0.29        cuda/11.0/nvhpc-byo-compiler/21.2        nccl/cuda/11.1/2.8.3
+   cuDNN/cuda/10.0/7.3.1.20        cuda/11.0/nvhpc-nompi/21.2               nccl/cuda/11.2/2.8.3
+   cuDNN/cuda/10.0/7.4.1.5         cuda/11.0/nvhpc/21.2                     nccl/cuda/11.2/2.9.6        (D)
+   cuDNN/cuda/10.0/7.4.2.24        cuda/11.1                                ohpc
+   cuDNN/cuda/10.0/7.5.0.56        cuda/11.2                                papi/5.7.0
+   cuDNN/cuda/10.0/7.6.4.38 (D)    cuda/11.2/nvhpc-byo-compiler/21.2        perl5/5.30.0
+   cuDNN/cuda/10.1/7.6.4.38        cuda/11.2/nvhpc-nompi/21.2               pmix/2.2.2
+   cuDNN/cuda/10.2/8.1.0.77 (L)    cuda/11.2/nvhpc/21.2                     postech                     (L)
+   cuDNN/cuda/11.0/8.0.4.30        cuda/8.0                                 postech-nccl-cuda10.0-caffe
+   cuDNN/cuda/11.1/8.0.4.30        cuda/9.0                                 prun/1.3                    (L)
+   cuDNN/cuda/11.2/8.1.0.77        cuda/9.2                                 python3/3.5.4
+   cuDNN/cuda/9.0/7                cuda10.2-cuDNN-sdk-postech               python3/3.6.9
+   cuDNN/cuda/9.0/7.1              cuda11.0-cuDNN-sdk-postech               python3/3.7.4               (D)
+   cuDNN/cuda/9.0/7.3.1.20         cuda11.2-cuDNN-sdk-postech               singularity/3.4.1           (L)
+   cuDNN/cuda/9.0/7.4.1.5          espeak-ng/1.52-dev                       slurm/21.08.4
+   cuDNN/cuda/9.0/7.6.4.38  (D)    gnu/5.4.0                                valgrind/3.15.0
+   cuDNN/cuda/9.2/7.6.4.38         gnu7/7.3.0                        (L)
+
+  Where:
+   D:  Default Module
+   L:  Module is loaded
+
+Use "module spider" to find all possible modules.
+Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+
+

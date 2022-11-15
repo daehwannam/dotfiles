@@ -10,6 +10,8 @@ fi
 
 # User specific aliases and functions
 
+# My configuraiton
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/dhnam/program/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -29,6 +31,5 @@ unset __conda_setup
 # https://stackoverflow.com/a/54560785
 conda config --set auto_activate_base false  # it creates "~/.condarc"
 
-CONDA=miniconda3  # anaconda3 or miniconda3 or ...
-export PATH="/home/dhnam/program/$CONDA/envs/default/bin:$PATH"
+# activate 'default' environment
 conda activate default
