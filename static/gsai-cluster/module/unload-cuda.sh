@@ -3,7 +3,7 @@
 # THIS_PATH=`realpath $0`
 # DIR_PATH=`dirname $THIS_PATH`
 
-DIR_PATH=/home/dhnam/script/gsai-cluster/module
+DIR_PATH=~/.dotfiles/static/gsai-cluster/module
 
 MODULE_AV_OUT=$DIR_PATH/av.out
 
