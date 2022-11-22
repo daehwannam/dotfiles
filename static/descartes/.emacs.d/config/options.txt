@@ -1,0 +1,1 @@
+(descartes-dual descartes exwm-setup vertico-setup documentation eglot-setup miniconda-env python-setup programming base)
