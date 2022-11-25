@@ -1,0 +1,1 @@
+(ubuntu-laptop-home ubuntu-laptop eglot-setup documentation exwm-setup vertico-setup slime-setup miniconda-env python-setup programming base)
