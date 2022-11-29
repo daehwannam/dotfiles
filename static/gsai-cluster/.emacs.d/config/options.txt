@@ -1,1 +1,1 @@
-(machine-id eglot-setup min-elpy-setup miniconda-env python-setup programming base)
+(machine-id eglot-setup min-elpy-setup miniconda-env python-setup programming vertico-setup base)
