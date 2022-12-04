@@ -13,6 +13,10 @@ class Config(pdb.DefaultConfig):
 
     use_pygments = True
 
-    # https://stackoverflow.com/a/3489273
+    # pygments style
+    # https://pygments.org/styles/
     pygments_formatter_class = "pygments.formatters.TerminalTrueColorFormatter"
-    pygments_formatter_kwargs = {"style": "monokai"}
+    # pygments_formatter_kwargs = {"style": "monokai"}
+    # pygments_formatter_kwargs = {"style": "paraiso-dark"}
+    pygments_formatter_kwargs = {"style": "native"}
+    # pygments_formatter_kwargs = {"style": "material"}
