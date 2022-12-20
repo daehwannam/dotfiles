@@ -11,6 +11,7 @@ import pdb
 class Config(pdb.DefaultConfig):
     sticky_by_default = True
 
+    # enable pygments
     use_pygments = True
 
     # pygments style
@@ -20,3 +21,6 @@ class Config(pdb.DefaultConfig):
     # pygments_formatter_kwargs = {"style": "paraiso-dark"}
     pygments_formatter_kwargs = {"style": "native"}
     # pygments_formatter_kwargs = {"style": "material"}
+
+    # disable highlight for the current line indicated by an arrow
+    highlight = False
