@@ -32,5 +32,5 @@ export PATH="/home/dhnam/program/$CONDA/envs/default/bin:$PATH"
 
 # script commands
 export PATH="/home/dhnam/script/common/command:$PATH"
-export PATH="/home/dhnam/script/gsai-cluster/command:$PATH"
+# export PATH="/home/dhnam/script/gsai-cluster/command:$PATH"
 export PATH="/home/dhnam/script/slurm/command:$PATH"
