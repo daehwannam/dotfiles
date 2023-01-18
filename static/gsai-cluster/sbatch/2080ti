@@ -23,7 +23,7 @@
 #
 # The above cofnig uses 1 gpu and 1 cpu
 
-source $(dirname $(which conda))/../etc/profile.d/conda.sh
+source $(conda info --base)/etc/profile.d/conda.sh
 # conda activate some-env
 
 srun "$@"
