@@ -1,15 +1,14 @@
 
 import pdb
 
-# Pdb packages
-#
-# pip install ipdb
+# Pdb++ install
 # pip install git+https://github.com/pdbpp/pdbpp.git
 
-# Pdb++ config
+# Pdb++ config example
 # https://github.com/pdbpp/pdbpp#configuration-and-customization
+
 class Config(pdb.DefaultConfig):
-    sticky_by_default = True
+    sticky_by_default = False
 
     # enable pygments
     use_pygments = True

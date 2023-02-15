@@ -117,6 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # My configuraiton
+source ~/script/common/config/bashrc.sh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -138,10 +139,12 @@ conda activate default
 
 # alias emacs='emacs -nw'
 
+# CUDA path
 export PATH=/home/dhnam/usr/local/cuda-11.3/bin:$PATH
 export LD_LIBRARY_PATH=/home/dhnam/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH
 
 # export PATH=/home/dhnam/usr/local/cuda-11.6/bin:$PATH
 # export LD_LIBRARY_PATH=/home/dhnam/usr/local/cuda-11.6/lib64:$LD_LIBRARY_PATH
 
-source ~/script/common/config/bashrc.sh
+# huggingface
+export HUGGINGFACE_HUB_CACHE=/home/dhnam/.cache/huggingface/hub
