@@ -148,3 +148,7 @@ export LD_LIBRARY_PATH=/home/dhnam/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH
 
 # huggingface
 export HUGGINGFACE_HUB_CACHE=/home/dhnam/.cache/huggingface/hub
+
+# miscellaneous
+# https://stackoverflow.com/a/62173247
+unset SSH_ASKPASS
