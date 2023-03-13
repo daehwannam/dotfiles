@@ -152,3 +152,6 @@ export HUGGINGFACE_HUB_CACHE=/home/dhnam/.cache/huggingface/hub
 # miscellaneous
 # https://stackoverflow.com/a/62173247
 unset SSH_ASKPASS
+
+# ipdb
+export PYTHONBREAKPOINT="ipdb.set_trace"
