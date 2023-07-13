@@ -23,7 +23,10 @@
 #
 # The above cofnig uses only 1 cpu
 
-source $(conda info --base)/etc/profile.d/conda.sh
+# Add the following source and conda commands in your bash script,
+# which are represented as arguments "$@"
+#
+# source $(conda info --base)/etc/profile.d/conda.sh  # if it's not working, use the real path instead
 # conda activate some-env
 
 srun "$@"
