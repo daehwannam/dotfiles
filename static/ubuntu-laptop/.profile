@@ -48,6 +48,9 @@ fi
 # firefox
 export PATH="/home/dhnam/program/firefox:$PATH"
 
+# local commands
+export PATH="/home/dhnam/.local/bin:$PATH"
+
 # change locale
 # https://askubuntu.com/a/1114209
 export LANG="en_US.UTF-8"
