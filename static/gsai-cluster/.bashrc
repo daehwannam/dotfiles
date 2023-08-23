@@ -160,17 +160,17 @@ export PYTHONBREAKPOINT="ipdb.set_trace"
 # # find ".conda-env" file and activate the environment name in the file
 # source /home/dhnam/script/common/config/conda-activate-locally.sh
 
-find-up () {
-    path=$(pwd)
-    while [[ "$path" != "" && ! -e "$path/$1" ]]; do
-        path=${path%/*}
-    done
-    echo "$path"
-}
+# find-up () {
+#     path=$(pwd)
+#     while [[ "$path" != "" && ! -e "$path/$1" ]]; do
+#         path=${path%/*}
+#     done
+#     echo "$path"
+# }
 
-CONDA_ENV_NAME_FILE_NAME='.conda-env'
-CONDA_ENV_NAME_DIR_PATH=$(find-up $CONDA_ENV_NAME_FILE_NAME)
-if [ ! -z $CONDA_ENV_NAME_DIR_PATH ]; then
-    CONDA_ENV_NAME=$(cat $CONDA_ENV_NAME_DIR_PATH/$CONDA_ENV_NAME_FILE_NAME)
-    conda activate $CONDA_ENV_NAME
-fi
+# CONDA_ENV_NAME_FILE_NAME='.conda-env'
+# CONDA_ENV_NAME_DIR_PATH=$(find-up $CONDA_ENV_NAME_FILE_NAME)
+# if [ ! -z $CONDA_ENV_NAME_DIR_PATH ]; then
+#     CONDA_ENV_NAME=$(cat $CONDA_ENV_NAME_DIR_PATH/$CONDA_ENV_NAME_FILE_NAME)
+#     conda activate $CONDA_ENV_NAME
+# fi
