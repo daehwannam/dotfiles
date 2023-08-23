@@ -15,7 +15,7 @@
 
 ##  node
 #_SBATCH --nodelist=n14
-#SBATCH --nodes=1            # number of nodes 
+#SBATCH --nodes=1            # number of nodes
 #SBATCH --ntasks-per-node=1
 
 
