@@ -1,1 +1,1 @@
-(descartes-dual-2 descartes exwm-setup inconsolata-12 org-setup vertico-setup documentation eglot-setup miniconda-env python-setup programming base)
+(descartes-dual-2 descartes exwm-setup inconsolata-12 org-setup vertico-setup documentation eglot-setup miniconda-env python-setup programming scheme-setup base)
