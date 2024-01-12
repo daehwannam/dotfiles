@@ -1,1 +1,1 @@
-(ubuntu-laptop-home ubuntu-laptop org-setup eglot-setup documentation exwm-setup vertico-setup slime-setup miniconda-env python-setup programming base)
+(ubuntu-laptop-dual ubuntu-laptop-sbcl ubuntu-laptop default-face-font org-setup eglot-setup documentation exwm-setup vertico-setup slime-setup miniconda-env python-setup programming base)
