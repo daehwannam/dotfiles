@@ -174,3 +174,24 @@ export PYTHONBREAKPOINT="ipdb.set_trace"
 #     CONDA_ENV_NAME=$(cat $CONDA_ENV_NAME_DIR_PATH/$CONDA_ENV_NAME_FILE_NAME)
 #     conda activate $CONDA_ENV_NAME
 # fi
+
+# # pyenv
+# #
+# # Load pyenv automatically by appending
+# # the following to
+# # ~/.bash_profile if it exists, otherwise ~/.profile (for login shells)
+# # and ~/.bashrc (for interactive shells) :
+# #
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# #
+# # Restart your shell for the changes to take effect.
+# #
+# # Load pyenv-virtualenv automatically by adding
+# # the following to ~/.bashrc:
+# eval "$(pyenv virtualenv-init -)"
+
+
+# poetry is installed in ~/.local/bin
+export PATH=/home/dhnam/.local/bin:$PATH
