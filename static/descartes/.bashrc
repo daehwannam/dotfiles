@@ -134,3 +134,6 @@ unset __conda_setup
 conda activate default
 
 source ~/script/common/config/bashrc.sh
+
+# ~/script/descartes/command/alternative-systemctl
+alias systemctl='alternative-systemctl'
