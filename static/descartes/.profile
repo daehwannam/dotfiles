@@ -39,3 +39,10 @@ if ! pgrep dropbox >/dev/null 2>&1
 then
     nohup ~/.dropbox-dist/dropboxd > /dev/null 2>&1 &
 fi
+
+# alias emacs='/snap/bin/emacs'
+# alias emacsclient='/snap/bin/emacsclient'
+
+# snap
+export PATH="/snap/bin:$PATH"
+export PATH="/snap/bin:$PATH"
