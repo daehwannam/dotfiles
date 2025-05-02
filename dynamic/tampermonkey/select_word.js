@@ -16,40 +16,8 @@
     let activeHints = [];
     let inputBuffer = '';
 
-    // // Generate multi-letter hints (e.g., a, b, ..., aa, ab, ..., zz)
-    // function generateHintLabels(count) {
-    //     const chars = HINT_CHARS.split('');
-    //     const labels = [];
-
-    //     // First, add 1-letter combinations
-    //     for (const char of chars) {
-    //         labels.push(char);
-    //     }
-
-    //     // Now add 2-letter combinations in a balanced way (like Vimium/Emacs Avy)
-    //     let idx = 0;
-    //     while (labels.length < count && idx < chars.length) {
-    //         for (let i = 0; i < chars.length; i++) {
-    //             if (labels.length < count) {
-    //                 labels.push(chars[i] + chars[idx]);
-    //             }
-    //         }
-    //         idx++;
-    //     }
-
-    //     // Lastly, if needed, add 3-letter combinations
-    //     for (let i = 0; i < chars.length; i++) {
-    //         for (let j = 0; j < chars.length; j++) {
-    //             for (let k = 0; k < chars.length; k++) {
-    //                 if (labels.length < count) {
-    //                     labels.push(chars[i] + chars[j] + chars[k]);
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    //     return labels.slice(0, count);
-    // }
+    // Global flag to track if we're in hinting mode
+    let isHintingActive = false;
 
     // Generate exactly two-character hints (e.g., aa, ab, ..., zz)
     function generateHintLabels(count) {
@@ -81,7 +49,6 @@
 
         return labels;
     }
-
 
     function getVisibleTextNodes(root) {
         const walker = document.createTreeWalker(
@@ -142,6 +109,7 @@
         }
         activeHints = [];
         inputBuffer = '';
+        isHintingActive = false;  // Set to false when cleanup is done
     }
 
     function createSelection(node, start, end) {
@@ -155,6 +123,7 @@
     }
 
     function activateHints() {
+        isHintingActive = true;  // Set the flag to indicate hinting mode is active
         const nodes = getVisibleTextNodes(document.body);
         const matches = [];
 
@@ -215,24 +184,38 @@
         }
     }
 
-    function keyHandler(e) {
-        if (/^[a-zA-Z]$/.test(e.key)) {
-            e.preventDefault();
-            handleHintKeypress(e.key);
-        } else if (e.key === 'Escape') {  // Add this line to handle ESC key press
-            e.preventDefault();
-            cleanupHints();  // Cleanup hints when ESC is pressed
-            window.removeEventListener('keydown', keyHandler, true);  // Remove key listener
-        }
+    // Handle all key events, blocking unwanted special actions while hinting is active
+function keyHandler(e) {
+    if (!isHintingActive) return;
+
+    // Stop site-defined keybindings
+    e.stopImmediatePropagation();
+    e.preventDefault();
+
+    if (e.key === 'Escape') {
+        cleanupHints();
+        window.removeEventListener('keydown', keyHandler, true);
+        return;
     }
 
-    window.addEventListener('keydown', (e) => {
-        // Triggering key is Ctrl + Space
-        if (e.ctrlKey && e.key === ' ') {
-            e.preventDefault();
-            cleanupHints();
-            activateHints();
-            window.addEventListener('keydown', keyHandler, true);
-        }
-    });
+    if (/^[a-zA-Z]$/.test(e.key)) {
+        handleHintKeypress(e.key);
+    }
+}
+
+// Activation key: Ctrl + Space
+window.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key === ' ') {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+
+        cleanupHints();
+        activateHints();
+        isHintingActive = true;
+
+        // Attach our key handler in capture mode
+        window.addEventListener('keydown', keyHandler, true);
+    }
+}, true); // <-- IMPORTANT: useCapture=true
+
 })();
