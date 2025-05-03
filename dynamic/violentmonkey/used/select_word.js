@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Vimium-style Word Selector with Multi-letter Hints (Balanced)
+// @name         select_word
 // @namespace    http://tampermonkey.net/
 // @version      1.6
 // @description  Show hints on visible words with Vimium-style multi-letter keys (balanced), select on keypress; accurate hint placement; scrolls properly ✅✅✅
-// @author       ChatGPT
+// @author       Daehwan Nam
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==

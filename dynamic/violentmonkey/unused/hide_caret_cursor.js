@@ -1,8 +1,9 @@
 // ==UserScript==
-// @name         Hide Firefox Caret Cursor (Simulated)
+// @name         hide_caret_cursor
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Simulates hiding caret in Firefox caret browsing mode by clearing focus and selection
+// @author       Daehwan Nam
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
