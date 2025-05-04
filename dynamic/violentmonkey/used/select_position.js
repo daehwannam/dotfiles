@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         select_word.js
+// @name         select_position.js
 // @namespace    http://tampermonkey.net/
 // @version      1.6
 // @description  Show hints on visible words with Vimium-style multi-letter keys (balanced), select on keypress; accurate hint placement; scrolls properly ✅✅✅
@@ -112,14 +112,14 @@
         isHintingActive = false;  // Set to false when cleanup is done
     }
 
-    function createSelection(node, start, end) {
+    function createSelection(node, offset) {
         const range = document.createRange();
-        range.setStart(node, start);
-        range.setEnd(node, end);
+        range.setStart(node, offset);
+        range.collapse(true);  // Collapses the range to a caret position
         const sel = window.getSelection();
         sel.removeAllRanges();
         sel.addRange(range);
-        range.startContainer.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // range.startContainer.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     function activateHints() {
@@ -174,7 +174,7 @@
         if (matched.length === 1 && matched[0].label === inputBuffer) {
             const target = matched[0];
             cleanupHints();
-            createSelection(target.node, target.index, target.index + target.word.length);
+            createSelection(target.node, target.index);
             window.removeEventListener('keydown', keyHandler, true);
         }
 

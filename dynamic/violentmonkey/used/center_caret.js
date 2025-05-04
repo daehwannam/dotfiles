@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         center_caret
+// @name         center_caret.js
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Scroll the page so the caret is vertically centered
@@ -29,9 +29,10 @@
         });
     }
 
-    // Ctrl + Enter to trigger centering
+    // Ctrl + , to trigger centering
     window.addEventListener('keydown', (e) => {
-        if (e.ctrlKey && e.altKey && e.key.toLowerCase() === 'l') {
+        // if (e.ctrlKey && e.altKey && e.key.toLowerCase() === ',')
+        if (e.ctrlKey && e.key === ',') {
             e.preventDefault();
             centerCaret();
         }
