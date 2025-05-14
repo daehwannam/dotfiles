@@ -214,6 +214,21 @@ user_pref("layout.word_select.eat_space_to_next_word", false);
 // to hide tab & address bar
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+// // Secure DNS
+// // https://github.com/yokoffing/Betterfox/wiki/Optional-Hardening#secure-dns
+// //
+// //
+// // PREF: set DoH provider
+// //
+// user_pref("network.trr.uri", "https://dns.dnswarden.com/00000000000000000000048"); // Hagezi Light + TIF
+// //
+// ;;
+// // PREF: enforce DNS-over-HTTPS (DoH)
+// // ☰ → Settings → Privacy & Security → DNS over HTTPS → Enable DNS over HTTPS using: → Increased Protection
+// //
+// user_pref("network.trr.mode", 2);
+// user_pref("network.trr.max-fails", 5);
+
 
 /****************************************************************************
  * SECTION: SMOOTHFOX                                                       *
