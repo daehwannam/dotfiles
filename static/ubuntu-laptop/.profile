@@ -42,6 +42,14 @@ then
     nohup ~/.dropbox-dist/dropboxd > /dev/null 2>&1 &
 fi
 
+# MEGA
+if ! pgrep mega-cmd-server > /dev/null 2>&1
+then
+    nohup mega-cmd-server >/dev/null 2>&1 &
+    # mega-sync /home/"$USER"/MEGA /MEGA 2>&1 &
+fi
+
+
 # mount
 /home/dhnam/script/laptop/remote/sshfs-descartes-ntfsdata.sh &
 
