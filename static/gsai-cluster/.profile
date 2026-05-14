@@ -26,11 +26,14 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# My configuraiton
-CONDA=miniconda3  # anaconda3 or miniconda3 or ...
-export PATH="/home/dhnam/program/$CONDA/envs/default/bin:$PATH"
-
 # script commands
-export PATH="/home/dhnam/script/common/command:$PATH"
-# export PATH="/home/dhnam/script/gsai-cluster/command:$PATH"
-export PATH="/home/dhnam/script/slurm/command:$PATH"
+export PATH="$HOME/script/common/command:$PATH"
+# export PATH="$HOME/script/gsai-cluster/command:$PATH"
+export PATH="$HOME/script/slurm/command:$PATH"
+
+# Micromamba setup
+MAMBA_ROOT_PREFIX="$HOME/program/micromamba"
+export WORKON_HOME="${MAMBA_ROOT_PREFIX}/envs"
+
+export CONDA=micromamba  # anaconda3, miniconda3, micromamba or ...
+export PATH="${MAMBA_ROOT_PREFIX}/envs/default/bin:$PATH"
