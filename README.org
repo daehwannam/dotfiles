@@ -10,6 +10,7 @@ git clone https://github.com/daehwannam/dotfiles.git ~/.dotfiles
 
 Install stow by one of the following commands:
 #+begin_src
+sudo zypper install stow
 sudo apt install stow
 conda install -y -c conda-forge stow
 #+end_src

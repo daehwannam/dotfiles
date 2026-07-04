@@ -1,4 +1,4 @@
 #!/usr/bin/sh
 
 # keyboard speed
-xset r rate 250 50
+xset r rate 250 60
