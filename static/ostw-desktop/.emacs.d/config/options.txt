@@ -1,0 +1,1 @@
+(default-face-font org-setup eglot-setup documentation vertico-setup cl-setup python-setup programming base)

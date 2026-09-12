@@ -42,6 +42,9 @@ fi
 
 # alias emacs='/snap/bin/emacs'
 # alias emacsclient='/snap/bin/emacsclient'
+export EMACS=emacs27
+alias emacs=emacs27
+
 
 # snap
 export PATH="/snap/bin:$PATH"

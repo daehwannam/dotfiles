@@ -119,46 +119,46 @@ fi
 # My configuraiton
 source ~/script/common/config/bashrc.sh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/dhnam/program/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/dhnam/program/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/dhnam/program/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/dhnam/program/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# activate 'default' environment
-conda activate default
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home2/dhnam/program/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home2/dhnam/program/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home2/dhnam/program/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home2/dhnam/program/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
+#
+# # activate 'default' environment
+# conda activate default
 
 # alias emacs='emacs -nw'
 
 # CUDA path
-export PATH=/home/dhnam/usr/local/cuda-11.3/bin:$PATH
-export LD_LIBRARY_PATH=/home/dhnam/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH
+export PATH=$HOME/usr/local/cuda-11.3/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH
 
-# export PATH=/home/dhnam/usr/local/cuda-11.6/bin:$PATH
-# export LD_LIBRARY_PATH=/home/dhnam/usr/local/cuda-11.6/lib64:$LD_LIBRARY_PATH
+# export PATH=$HOME/usr/local/cuda-11.6/bin:$PATH
+# export LD_LIBRARY_PATH=$HOME/usr/local/cuda-11.6/lib64:$LD_LIBRARY_PATH
 
 # huggingface
-export HUGGINGFACE_HUB_CACHE=/home/dhnam/.cache/huggingface/hub
+export HUGGINGFACE_HUB_CACHE=$HOME/.cache/huggingface/hub
 
 # miscellaneous
 # https://stackoverflow.com/a/62173247
 unset SSH_ASKPASS
 
-# ipdb
-export PYTHONBREAKPOINT="ipdb.set_trace"
+# # ipdb
+# export PYTHONBREAKPOINT="ipdb.set_trace"
 
 # # conda-env
 # # find ".conda-env" file and activate the environment name in the file
-# source /home/dhnam/script/common/config/conda-activate-locally.sh
+# source $HOME/script/common/config/conda-activate-locally.sh
 
 # find-up () {
 #     path=$(pwd)
@@ -194,4 +194,35 @@ export PYTHONBREAKPOINT="ipdb.set_trace"
 
 
 # poetry is installed in ~/.local/bin
-export PATH=/home/dhnam/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/home2/dhnam/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/home2/dhnam/program/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+# Activate the default environment
+micromamba activate default
+
+# Setting alias of conda
+alias conda="$CONDA"
+
+
+# >>> sremain alias >>>
+# Added by cluster-remains/install.sh
+sremain() {
+  "/home2/dhnam/cluster-remains/sremain.sh" "$@"
+}
+scrime() {
+  "/home2/dhnam/cluster-remains/scrime.sh" "$@"
+}
+# <<< sremain alias <<<
