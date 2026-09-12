@@ -29,8 +29,11 @@ fi
 # My configuration starts from here
 
 # conda path config
-CONDA=miniconda3  # anaconda3 or miniconda3 or ...
-export PATH="/home/dhnam/program/$CONDA/envs/default/bin:$PATH"
+export CONDA_TYPE=miniconda3  # anaconda3, miniconda3, micromamba ...
+export CONDA=conda  # conda, micromamba, ...
+export PATH="/home/dhnam/program/${CONDA_TYPE}/envs/default/bin:$PATH"
+
+export WORKON_HOME="$HOME/program/miniconda3/envs/"
 
 # app commands
 export PATH="/home/dhnam/script/common/command:$PATH"
@@ -51,7 +54,7 @@ fi
 
 
 # mount
-/home/dhnam/script/laptop/remote/sshfs-descartes-ntfsdata.sh &
+/home/dhnam/script/laptop/remote/postech/sshfs-descartes-ntfsdata.sh &
 
 # firefox
 export PATH="/home/dhnam/program/firefox:$PATH"

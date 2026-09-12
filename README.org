@@ -14,3 +14,11 @@ sudo zypper install stow
 sudo apt install stow
 conda install -y -c conda-forge stow
 #+end_src
+
+* Usage
+#+begin_src sh
+cd static
+cat 'common <another-option>' > options.txt
+./link.sh
+cd ..
+#+end_src

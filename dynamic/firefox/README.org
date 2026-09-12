@@ -2,3 +2,9 @@
 * Used opnen source code
 - https://github.com/MrOtherGuy/firefox-csshacks
 - https://github.com/yokoffing/Betterfox
+
+* Profile path
+- Open "about:suport"
+- Check "Profile Directory"
+  e.g. ~/home/user/.config/librewolf/librewolf/abcdefgh.default-default~
+- Make a file named "profile-path.txt" which contains only the path.
